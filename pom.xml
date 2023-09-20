@@ -11,8 +11,16 @@
 	<groupId>com.ashuboi</groupId>
 	<artifactId>e-wallet</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>e-wallet</name>
 	<description>e-wallet microservices appplication with payment integration</description>
+	<modules>
+		<module>user-service</module>
+		<module>wallet-service</module>
+		<module>notification-service</module>
+		<module>transaction-service</module>
+        <module>common-code</module>
+    </modules>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
