@@ -10,6 +10,14 @@
     </parent>
 
     <artifactId>transaction-service</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.ashuboi</groupId>
+            <artifactId>common-code</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

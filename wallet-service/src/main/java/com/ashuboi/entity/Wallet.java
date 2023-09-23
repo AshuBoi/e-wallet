@@ -1,41 +1,33 @@
-package com.ashuboi.Entity;
+package com.ashuboi.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.Date;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Entity
-public class User {
-
+public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id", nullable = false)
-    private Long Id;
+    @Column(name= "id",  nullable = false)
+    private Long id;
 
     @Column(nullable = false)
     private String name;
-
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false, unique = true)
-    private String phone;
+    @Column(nullable = false)
+    private Long userId;
 
-    @Column(nullable = false, unique = true)
-    private String kycId;
-
-    @Column
-    private String address;
+    private Double balance;
 
     @CreationTimestamp
     private Date createdAt;

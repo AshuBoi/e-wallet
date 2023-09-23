@@ -1,4 +1,4 @@
-package com.ashuboi;
+package com.ashuboi.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
