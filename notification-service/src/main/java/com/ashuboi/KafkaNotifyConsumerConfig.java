@@ -15,7 +15,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
 @Configuration
-public class KafkaNotifyConsumerConfig {
+public class
+KafkaNotifyConsumerConfig {
 
     private static Logger LOGGER = LoggerFactory.getLogger(KafkaNotifyConsumerConfig.class);
 

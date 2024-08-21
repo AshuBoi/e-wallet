@@ -15,7 +15,8 @@ import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("/user-service")
-public class UserController {
+public class
+UserController {
 
     private static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
