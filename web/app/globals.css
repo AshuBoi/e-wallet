@@ -1,0 +1,364 @@
+:root {
+  --bg-deep: #0c1410;
+  --bg-panel: #142019;
+  --bg-elevated: #1b2b22;
+  --ink: #e7f0ea;
+  --muted: #9bb0a3;
+  --accent: #3d8f6a;
+  --accent-soft: #8fbf9f;
+  --danger: #c97b7b;
+  --line: #2a4034;
+  --display: "Fraunces", Georgia, serif;
+  --body: "Source Sans 3", "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: var(--body);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(61, 143, 106, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(143, 191, 159, 0.12), transparent 50%),
+    linear-gradient(160deg, #0c1410 0%, #101a14 45%, #0d1511 100%);
+}
+
+a {
+  color: var(--accent-soft);
+}
+
+main {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.brand {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.lede {
+  color: var(--muted);
+  max-width: 36rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn,
+button,
+input,
+select {
+  font: inherit;
+}
+
+.btn,
+button {
+  border: 1px solid transparent;
+  background: var(--accent);
+  color: #07110c;
+  padding: 0.7rem 1.1rem;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-1px);
+  background: var(--accent-soft);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: #1a1010;
+}
+
+.panel {
+  background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
+  border: 1px solid var(--line);
+  padding: 1.25rem 1.4rem;
+  backdrop-filter: blur(6px);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 860px) {
+  .grid.two {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+  color: var(--ink);
+}
+
+.balance {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  margin: 0.2rem 0 0;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.callout {
+  border-left: 3px solid var(--accent-soft);
+  padding: 0.75rem 1rem;
+  background: rgba(61, 143, 106, 0.08);
+  color: var(--muted);
+  margin: 1rem 0;
+}
+
+.error {
+  color: var(--danger);
+  margin: 0.5rem 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.65rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.fade-in {
+  animation: fadeIn 480ms ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pulse {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Architecture board */
+.arch-board {
+  margin-top: 0.5rem;
+}
+
+.arch-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.arch-stage {
+  position: relative;
+  height: 420px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.arch-iso {
+  position: absolute;
+  inset: 2rem;
+  transform: rotateX(54deg) rotateZ(-32deg);
+  transform-style: preserve-3d;
+}
+
+.arch-floor {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--accent-soft) 35%, transparent);
+  border-radius: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(61, 143, 106, 0.12),
+    rgba(143, 191, 159, 0.05)
+  );
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.arch-kafka {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 68%;
+  height: 4.2rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid color-mix(in srgb, var(--accent-soft) 50%, transparent);
+  border-radius: 999px;
+  background: rgba(61, 143, 106, 0.16);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 0.15rem;
+}
+
+.arch-kafka span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.arch-kafka small {
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.arch-kafka.lit {
+  box-shadow: 0 0 24px rgba(143, 191, 159, 0.35);
+}
+
+.arch-node {
+  position: absolute;
+  width: 148px;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  color: var(--ink);
+  padding: 0.75rem;
+  transform: translateZ(28px);
+  cursor: pointer;
+}
+
+.arch-node span {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--accent-soft);
+  letter-spacing: 0.1em;
+}
+
+.arch-node strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+}
+
+.arch-node.lit,
+.arch-node:hover {
+  border-color: var(--accent-soft);
+  background: rgba(61, 143, 106, 0.18);
+}
+
+.arch-user {
+  left: 4%;
+  top: 8%;
+}
+
+.arch-wallet {
+  right: 4%;
+  top: 8%;
+}
+
+.arch-transaction {
+  left: 4%;
+  bottom: 8%;
+}
+
+.arch-notification {
+  right: 4%;
+  bottom: 8%;
+}
+
+.arch-popups {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: min(280px, 70%);
+  display: grid;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.arch-popup {
+  animation: fadeIn 320ms ease both;
+}
+
+.arch-popup strong {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .arch-stage {
+    height: 360px;
+  }
+
+  .arch-node {
+    width: 120px;
+    padding: 0.55rem;
+  }
+
+  .arch-kafka small {
+    display: none;
+  }
+}

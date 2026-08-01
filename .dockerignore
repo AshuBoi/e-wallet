@@ -1,0 +1,7 @@
+**/target
+**/.idea
+**/node_modules
+**/.next
+.git
+*.md
+.qodana

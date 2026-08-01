@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">AshuBoi Wallet system design</title>
+  <desc id="desc">Browser to Nginx to User Wallet Transaction services with Kafka and Notification</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c1410"/>
+      <stop offset="100%" stop-color="#142019"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#8fbf9f"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <text x="40" y="48" fill="#8fbf9f" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="3">ASHUBOI WALLET</text>
+  <text x="40" y="82" fill="#e7f0ea" font-family="Georgia, serif" font-size="28">Event-driven system design</text>
+
+  <rect x="40" y="120" width="160" height="64" rx="8" fill="#1b2b22" stroke="#3d8f6a"/>
+  <text x="120" y="148" text-anchor="middle" fill="#e7f0ea" font-family="Segoe UI, Arial" font-size="14">Next.js UI</text>
+  <text x="120" y="168" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">:3000 / :9080</text>
+
+  <rect x="260" y="120" width="160" height="64" rx="8" fill="#1b2b22" stroke="#3d8f6a"/>
+  <text x="340" y="148" text-anchor="middle" fill="#e7f0ea" font-family="Segoe UI, Arial" font-size="14">Nginx gateway</text>
+  <text x="340" y="168" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">HTTP edge</text>
+
+  <line x1="200" y1="152" x2="260" y2="152" stroke="#8fbf9f" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="260" width="180" height="72" rx="8" fill="#1b2b22" stroke="#C99733"/>
+  <text x="170" y="290" text-anchor="middle" fill="#e7f0ea" font-family="Segoe UI, Arial" font-size="14">User Service</text>
+  <text x="170" y="310" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">JWT · USER-CREATED</text>
+
+  <rect x="300" y="260" width="180" height="72" rx="8" fill="#1b2b22" stroke="#C99733"/>
+  <text x="390" y="290" text-anchor="middle" fill="#e7f0ea" font-family="Segoe UI, Arial" font-size="14">Wallet Service</text>
+  <text x="390" y="310" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">ledger · top-up · settle</text>
+
+  <rect x="520" y="260" width="180" height="72" rx="8" fill="#1b2b22" stroke="#C99733"/>
+  <text x="610" y="290" text-anchor="middle" fill="#e7f0ea" font-family="Segoe UI, Arial" font-size="14">Transaction Service</text>
+  <text x="610" y="310" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">Idempotency-Key</text>
+
+  <rect x="740" y="260" width="180" height="72" rx="8" fill="#1b2b22" stroke="#C99733"/>
+  <text x="830" y="290" text-anchor="middle" fill="#e7f0ea" font-family="Segoe UI, Arial" font-size="14">Notification</text>
+  <text x="830" y="310" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">Mailhog emails</text>
+
+  <line x1="340" y1="184" x2="170" y2="260" stroke="#8fbf9f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="340" y1="184" x2="390" y2="260" stroke="#8fbf9f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="340" y1="184" x2="610" y2="260" stroke="#8fbf9f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="400" width="560" height="70" rx="35" fill="#142019" stroke="#3d8f6a" stroke-dasharray="6 4"/>
+  <text x="480" y="430" text-anchor="middle" fill="#8fbf9f" font-family="Consolas, monospace" font-size="13">KAFKA</text>
+  <text x="480" y="452" text-anchor="middle" fill="#9bb0a3" font-family="Consolas, monospace" font-size="11">USER-CREATED · TXN-INIT · TXN-COMPLETED · WALLET-UPDATED</text>
+
+  <line x1="170" y1="332" x2="300" y2="420" stroke="#C99733" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="332" x2="420" y2="400" stroke="#C99733" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="610" y1="332" x2="560" y2="400" stroke="#C99733" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="700" y1="420" x2="830" y2="332" stroke="#C99733" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>
