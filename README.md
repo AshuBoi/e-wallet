@@ -14,9 +14,11 @@ Built as a portfolio showcase: Spring Boot + Kafka + MySQL backend, Next.js demo
 | Async settlement | Kafka topics: `USER-CREATED`, `TXN-INIT`, `TXN-COMPLETED`, `WALLET-UPDATED` |
 | Auth | JWT register/login; transfer sender taken from token |
 
-## Architecture
+## Architecture / System Design
 
-![AshuBoi Wallet system design](docs/system-design.svg)
+My original system design diagram:
+
+![Screenshot 2023-09-07 185710](https://github.com/user-attachments/assets/93c92b76-910d-4924-a29f-d158ed4df1a6)
 
 ```text
 Browser (Next.js)
